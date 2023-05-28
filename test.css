@@ -1,0 +1,78 @@
+* {
+	margin:0;
+	padding:0;
+	font-family:Verdana,sans-serif;
+	box-sizing:border-box;
+}
+input[type='text'], textarea {
+	width: 80%;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+.btn {
+	padding: 5px 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+.btn.btn--gray {
+	background-color: #666;
+}
+.btn.btn--black {
+	background-color: #333;
+}
+.fs-12 {
+	font-size: 12px;
+}
+.txt-gray {
+	color: #aaa;
+}
+
+
+div[class$='-box']:not(.reply-box) {
+	width: 550px;
+	text-align: right;
+}
+.list-box {
+	background-color: #eee;
+	border: 0;
+}
+.list-box .list li > div:not(.reply-box),
+.reply-box .reply-write,
+.write-box > div {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.list-box .list li {
+	padding: 20px 10px;
+    border-top: 1px solid #ddd;
+}
+.reply-box {
+	text-align: left;
+}
+.write-box div:last-child {
+	margin-bottom: 0;
+}
+.list-box .list .title,
+.write-box label {
+	font-weight: bold;
+}
+.list-box .list .title .reply-count {
+	color: blue;
+	margin-left: 10px;
+}
+
+.write-box {
+	border: 1px solid #ddd;
+	padding: 20px 10px;
+}
+.write-box label {
+	width: 20%;
+}
+.write-box textarea {
+	height: 100px;
+}
