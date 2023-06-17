@@ -4,10 +4,7 @@ var router = express.Router();
 // require maria.js 
 const maria = require('./maria');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
 
 router.get('/create', function(req, res) {
   maria.query('CREATE TABLE DEPARTMENT ('

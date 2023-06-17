@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>게시판</title>
+    </head>
+    <body>
+        <h1 align = "center">게시판</h1>
+        <h3 align = "center"><전체 글 목록></h3>
+        <hr>
+        <hr>
+        <!doctype html>
+        <body>
+            <table width="100%" padding="2px" cellspacing="10px">
+                <thead>
+                    <tr>
+                        <th width="50px">번호</th>
+                        <th>제목</th>
+                        <th width="80px">작성자</th>
+                        <th width="170px">등록일</th>
+                    </tr>
+                </thead>
+                <% for(var i=0; i<data.length; i++) {%>
+                    <tbody align="center">
+                        <td width="50px"><%= data[i][0] %></td>
+                        <td><%= data[i][1] %></td>
+                        <td width="80px"><%= data[i][2] %></td>
+                        <td width="170px"><%= data[i][3] %></td>    
+                    </tbody>
+                <% } %>
+            </table>         
+        </body>
+        <div>
+            <input type="button" value="글 작성" align="center" onclick="location.href='/write'">
+        </div>
+    </body>
+</html>
+

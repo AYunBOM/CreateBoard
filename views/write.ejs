@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
+            <title>보미의 게시판</title>
+    </head>
+    <body>
+        <h1 align = "center">게시글 작성</h1>
+        <hr>
+    <body>
+        <form action="/post" method='post'>
+            <p>
+                <td>이름</td>
+                <input type="text" name="username" placeholder="이름을 입력해주세요.">
+            </p>
+            <hr>
+            <p>
+                <td>제목</td>
+                <input type="text" name="title" placeholder="제목을 입력해주세요.">
+            </p>
+            <hr>
+            <p>
+                <td>내용</td>
+                <input type="text" name="detail" placeholder="내용을 입력해주세요.">
+            </p>
+                <input type="submit" name="submit" value="등록하기" onclick="location.href='/post'">
+            </p>
+        </form>
+    </body>
+</html>
