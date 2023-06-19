@@ -7,29 +7,47 @@
     <body>
         <h1 align = "center">게시판</h1>
         <h3 align = "center"><전체 글 목록></h3>
+        <form method='get' >
+            <input type="text" name="page_num" placeholder="n개 단위로 보기">
+            <input type="submit" value="확인">
+        </form >
         <hr>
         <hr>
-        <!doctype html>
-        <body>
-            <table width="100%" padding="2px" cellspacing="10px">
-                <thead>
-                    <tr>
-                        <th width="50px">번호</th>
-                        <th>제목</th>
-                        <th width="80px">작성자</th>
-                        <th width="170px">등록일</th>
-                    </tr>
-                </thead>
-                <% for(var i=0; i<data.length; i++) {%>
-                    <tbody align="center">
-                        <td width="50px"><%= data[i][0] %></td>
-                        <td><%= data[i][1] %></td>
-                        <td width="80px"><%= data[i][2] %></td>
-                        <td width="170px"><%= data[i][3] %></td>    
-                    </tbody>
-                <% } %>
-            </table>         
-        </body>
+        <table width="100%" padding="4px" cellspacing="15px">
+            <thead>
+                <tr>
+                    <th width="50px" height="50px">#</th>
+                    <th>제목</th>
+                    <th width="80px" height="50px">작성자</th>
+                    <th width="170px" height="50px">등록일</th>
+                </tr>
+            </thead>
+            <% for(var i = (page*page_num)-page_num; i<page*page_num; i++) {
+                if(i> length){
+                    i++;
+                }
+                else{
+                %>
+                <tbody align="center">
+                    <td width="50px"><%= data[i][0] %></td>
+                    <td><a href="/read/<%= data[i][0] %>"><%= data[i][1] %></a></td>
+                    <td width="80px"><%= data[i][2] %></td>
+                    <td width="170px"><%= data[i][3] %></td>    
+                </tbody>
+                <% }
+            }%>
+            <tr>
+                <td colspan="6">
+                    <%
+                    for(var j = 0; j < data.length / page_num; j++){
+                    %>
+                    [<a href="/<%= j + 1 %>"><%=   j + 1   %></a>]
+                    <%
+                    }
+                    %>
+                </td>
+            </tr>
+        </table>         
         <div>
             <input type="button" value="글 작성" align="center" onclick="location.href='/write'">
         </div>
